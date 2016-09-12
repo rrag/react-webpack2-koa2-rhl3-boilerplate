@@ -1,0 +1,57 @@
+{
+  "name": "strategyquant-react-stockcharts-customized",
+  "version": "0.0.0",
+  "private": true,
+  "description": "strategyquant-react-stockcharts-customized",
+  "scripts": {
+    "watch": "node scripts/watch.js",
+    "serve": "node scripts/serve.js",
+    "clean": "rimraf build",
+    "build": "npm run clean && npm run build:dev && npm run build:prod",
+    "build:prod": "webpack --config config/webpack.base.config.js --env prod",
+    "build:dev": "webpack --config config/webpack.base.config.js --env dev",
+    "lint": "eslint --ext .js,.jsx src --fix",
+    "test": "jest --coverage",
+    "watch:test": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/rramaswa/strategyquant-react-stockcharts-customized/"
+  },
+  "license": "",
+  "bugs": {
+    "url": "https://bitbucket.org/rramaswa/strategyquant-react-stockcharts-customized/issues?status=new&status=open"
+  },
+  "homepage": "https://bitbucket.org/rramaswa/strategyquant-react-stockcharts-customized/",
+  "dependencies": {
+    "d3": "^3.5.17",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-hot-loader": "^3.0.0-beta.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.13.0",
+    "eslint": "^3.5.0",
+    "eslint-plugin-flowtype": "^2.16.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.1",
+    "eslint-plugin-react": "^6.2.0",
+    "html-webpack-plugin": "^2.22.0",
+    "jest": "^15.1.1",
+    "koa": "^2.0.0-alpha.7",
+    "koa-static": "^3.0.0",
+    "koa-webpack-middleware": "^1.0.1",
+    "progress-bar-webpack-plugin": "^1.9.0",
+    "react-addons-test-utils": "^15.3.1",
+    "react-test-renderer": "^15.3.1",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.1.0-beta.22",
+    "webpack-config-utils": "^2.1.0"
+  }
+}

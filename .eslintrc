@@ -1,0 +1,49 @@
+{
+	"plugins": [
+		"import", "flowtype", "jsx-a11y", "react"
+	],
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true,
+			"experimentalObjectRestSpread": true,
+		},
+	},
+	"env": {
+		"browser": true,
+		"node": true,
+		"es6": true,
+		"jest": true
+	},
+	"settings": {
+		"import/ignore": [
+			"node_modules",
+			"\\.(json|css|jpg|png|gif|eot|svg|ttf|woff|woff2|mp4|webm)$",
+		],
+		"import/extensions": [".js"],
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".json"]
+			}
+		}
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"rules": {
+
+		"jsx-a11y/aria-role": "warn",
+		"jsx-a11y/img-has-alt": "warn",
+		"jsx-a11y/img-redundant-alt": "warn",
+		"jsx-a11y/no-access-key": "warn",
+		"flowtype/define-flow-type": "warn",
+		"flowtype/require-valid-file-annotation": "warn",
+		"flowtype/use-flow-type": "warn",
+
+		"indent": [2, "tab"],
+		"jsx-quotes": [2, "prefer-double"],
+		"no-console": [1],
+		"no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+		"quotes": [2, "double", "avoid-escape"],
+	}
+}

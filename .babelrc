@@ -1,0 +1,9 @@
+{
+  "presets": ["stage-2", "react", "es2015"],
+  "plugins": [
+  	"babel-plugin-syntax-trailing-function-commas",
+  	"babel-plugin-transform-class-properties",
+  	"transform-flow-strip-types",
+    "react-hot-loader/babel"
+  ]
+}
