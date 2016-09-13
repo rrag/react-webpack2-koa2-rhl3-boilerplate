@@ -1,8 +1,8 @@
 {
-  "name": "strategyquant-react-stockcharts-customized",
+  "name": "react-webpack2-koa2-rhl3-boilerplate",
   "version": "0.0.0",
   "private": true,
-  "description": "strategyquant-react-stockcharts-customized",
+  "description": "react-webpack2-koa2-rhl3-boilerplate",
   "scripts": {
     "watch": "node scripts/watch.js",
     "serve": "node scripts/serve.js",
