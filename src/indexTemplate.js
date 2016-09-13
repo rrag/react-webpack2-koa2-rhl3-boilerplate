@@ -5,6 +5,7 @@ const watchScripts = `
 
 function getScriptsTag(mode) {
 	switch (mode) {
+	case "dev":
 	case "watch":
 		return watchScripts;
 	default:

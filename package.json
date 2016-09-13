@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "node scripts/watch.js",
     "serve": "node scripts/serve.js",
-    "clean": "rimraf build",
+    "clean": "rimraf build && rimraf coverage && rimraf npm-debug.log",
     "build": "npm run clean && npm run build:dev && npm run build:prod",
     "build:prod": "webpack --config config/webpack.base.config.js --env prod",
     "build:dev": "webpack --config config/webpack.base.config.js --env dev",
@@ -16,13 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/rramaswa/strategyquant-react-stockcharts-customized/"
+    "url": "https://github.com/rrag/react-webpack2-koa2-rhl3-boilerplate"
   },
   "license": "",
   "bugs": {
-    "url": "https://bitbucket.org/rramaswa/strategyquant-react-stockcharts-customized/issues?status=new&status=open"
+    "url": "https://github.com/rrag/react-webpack2-koa2-rhl3-boilerplate/issues"
   },
-  "homepage": "https://bitbucket.org/rramaswa/strategyquant-react-stockcharts-customized/",
+  "homepage": "https://github.com/rrag/react-webpack2-koa2-rhl3-boilerplate",
   "dependencies": {
     "d3": "^3.5.17",
     "react": "^15.3.1",

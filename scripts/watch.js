@@ -56,7 +56,7 @@ app.use(devMiddleware(compiler, {
 }))
 app.use(hotMiddleware(compiler, {
 	// log: console.warn,
-	path: "/whoosaa",
+	path: "/yipiee",
 	// heartbeat: 10 * 1000
 }))
 
