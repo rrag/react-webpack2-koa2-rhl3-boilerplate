@@ -12,21 +12,21 @@ const appSources = [
 ]
 
 function buildConfig(mode) {
-	const { ifProd, ifDev, ifWatch, ifNotWatch } = getIfUtils(mode, ["prod", "dev", "test", "watch"])
+	const { ifProd, ifNotProd, ifNotDev, ifWatch, ifNotWatch } = getIfUtils(mode, ["prod", "dev", "test", "watch"])
 
 	return {
 		context: path.join(__dirname, ".."),
 		entry: removeEmpty([
 			ifWatch("react-hot-loader/patch"),
-			ifWatch("webpack-hot-middleware/client?path=/whoosaa&timeout=20000"),
+			ifWatch("webpack-hot-middleware/client?path=/yipiee&timeout=20000"),
 			// WATCH === mode ? "webpack-dev-server/client?http://localhost:3000" : null,
 			// WATCH === mode ? "webpack/hot/only-dev-server" : null,
 			"./src/index",
 		]),
 		output: {
-			path: path.join(__dirname, "..", "build/dist"),
-			publicPath: "/dist",
-			filename: `main${ifProd(".min", "")}.[hash].js`,
+			path: path.join(__dirname, "..", "build"),
+			publicPath: "/",
+			filename: `dist/main${ifProd(".min", "")}${ifWatch("", ".[hash]")}.js`,
 			pathinfo: ifWatch(true, false), // since we have eval as devtool for watch, pathinfo gives line numbers which are close enough
 		},
 		debug: true,
@@ -35,7 +35,7 @@ function buildConfig(mode) {
 			loaders: [
 				// { test: /\.json$/, loader: "json" },
 				// { test: /\.html$/, loader: "html" },
-				{ test: /\.(js|jsx)$/, loaders: ["babel"], exclude: /node_modules/ },
+				{ test: /\.(js|jsx)$/, loaders: ["babel"],/* exclude: /node_modules/ */ include: appSources},
 				// { test: /\.(js|jsx)$/, loaders: ["babel"], exclude: /node_modules\/(?!react-stockcharts$)/, },
 				// { test: /\.jpg$/, loader: "file-loader" },
 				// { test: /\.(png|svg)$/, loader: "url-loader?mimetype=image/png" },
@@ -66,12 +66,12 @@ function buildConfig(mode) {
 				template: "./src/indexTemplate.js",
 				title: "foobar",
 				mode,
-				filename: `index${ifProd("", ".dev")}.html`
+				filename: `index${ifNotDev("", ".dev")}.html`
 			}),
 			/*
 			ifProd(new OfflinePlugin()),*/
 		]),
-		externals: ifWatch({
+		externals: ifNotProd({
 			"react": "React",
 			"react-dom": "ReactDOM",
 			"d3": "d3",
