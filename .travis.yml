@@ -1,0 +1,25 @@
+sudo: false
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
+
+os: linux
+
+language: node_js
+
+node_js:
+  - '6'
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false
+
+before_script:
+  - npm prune
+
+script:
+  - npm run validate

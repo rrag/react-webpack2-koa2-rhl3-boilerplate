@@ -10,8 +10,9 @@
     "build": "npm run clean && npm run build:dev && npm run build:prod",
     "build:prod": "webpack --config config/webpack.base.config.js --env prod",
     "build:dev": "webpack --config config/webpack.base.config.js --env dev",
-    "lint": "eslint --ext .js,.jsx src --fix",
+    "lint": "eslint --ext .js,.jsx src",
     "test": "jest --coverage",
+    "validate": "npm run lint && npm run test",
     "watch:test": "npm run test -- --watch"
   },
   "repository": {
