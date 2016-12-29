@@ -44,7 +44,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.1",
     "eslint-plugin-react": "^6.2.2",
     "html-webpack-plugin": "^2.22.0",
-    "jest": "^15.1.1",
+    "jest": "^18.0.0",
     "koa": "^2.0.0-alpha.7",
     "koa-static": "^3.0.0",
     "koa-webpack-middleware": "^1.0.1",
